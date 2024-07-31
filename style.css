@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6e6; /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflowing elements */
+}
+
+.container {
+    width: 60%;
+    text-align: center;
+    background-color: #fff0f5; /* Lavender blush background */
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ffb6c1; /* Light pink border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s ease-in-out, borderGlow 2s infinite;
+    position: relative;
+}
+
+.romantic-image {
+    width: 10%;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 20px;
+}
+
+.romantic-paragraph {
+    font-size: 24px;
+    line-height: 1.8;
+    color: #b22222; /* Firebrick color */
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 10px rgba(178, 34, 34, 0.5); /* Soft glow effect */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Keyframes for border glow effect */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 182, 193, 1);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+    }
+}
+
+/* Floating hearts */
+.heart {
+    width: 20px;
+    height: 20px;
+    background-color: #ffb6c1; /* Light pink color */
+    position: absolute;
+    bottom: 0;
+    animation: float 5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ffb6c1;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 5s;
+}
+
+.heart:nth-child(2) {
+    left: 40%;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(3) {
+    left: 60%;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(4) {
+    left: 80%;
+    animation-duration: 4s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    animation-duration: 8s;
+}
+
+/* Falling text */
+.falling-text {
+    position: absolute;
+    font-size: 20px;
+    color: red;
+    font-family: 'Dancing Script', cursive;
+    animation: fall 5s infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.falling-text.left {
+    left: 10%;
+    animation-duration: 5s;
+    animation-delay: 0s;
+}
+
+.falling-text.center {
+    left: 50%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.falling-text.right {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
